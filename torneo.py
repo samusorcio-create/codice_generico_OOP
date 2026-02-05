@@ -6,6 +6,9 @@ class Torneo:
         self.num_partecipanti = num_partecipanti
         self.quota_iscrizione = quota_iscrizione
         self.premio = premio
+        self.partecipanti = []
+        self.giochi = []
+
 
     def __ep__(self, other):
         if not isinstance(other, Torneo):
@@ -14,3 +17,19 @@ class Torneo:
     
     def __repr__(self):
         return f"nome => {self.nome}, data => {self.data}, numnero dei partecipanti => {self.num_partecipanti}, quota di iscrizione => {self.quota_iscrizione}, premio => {self.premio}"
+
+    def postiDisponibili(self):
+        return len(self.partecipanti) - self.num_partecipanti
+
+    def isPieno(self):
+        if Torneo.postiDisponibili():
+            return False
+        else:
+            return True
+
+    # cliente dovrà essere di tipo Cliente
+    def iscriviCliene(self,cliente):
+        self.partecipanti.append(cliente)
+        
+    def visualizzaPartecipanti(self):
+        return self.partecipanti
