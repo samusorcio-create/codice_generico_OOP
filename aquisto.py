@@ -4,7 +4,10 @@ class Aquisto:
                 self.prezzo = prezzo
                 self.reteizzato = reteizzato
                 self.data = data    
-                self.gioco = []
+                self.gioci = []
+                self.clienti = []
+
+                # another atribut missed
 
         def __repr__(self):
             return f"pezzo =>{self.prezzo}, reteizzato =>{self.reteizzato}, data =>{self.data}"
